@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="description" content="Search for items and compare prices on eBay, AliExpress, Amazon side by side">
 	<title>Search for products on eBay, Aliexpress, Amazon side by side</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 	<form action="" method="get">
 		<h1>Search for products on eBay, Aliexpress, Amazon</h1>
@@ -30,15 +28,13 @@
 		if (q && o) {
 			document.getElementById('q').value = decodeURIComponent(q.replace('+', ' '));
 			document.getElementById('o').value = o;
-			var ebay = 'http://www.ebay.com/sch/i.html?_sop=' + o + '&_nkw=' + q;
-			var aliexpress = 'http://m.aliexpress.com/search.htm?sortType' + (o == 12 ? 'MAIN' : (o == 15 ? 'PP_A' : 'PP_D')) + '&keywords=' + q;
-			var amazon = 'http://www.amazon.com/gp/aw/s/ref=is_s?s=' + (o == 12 ? 'relevanceblender' : (o == 15 ? 'price-asc-rank' : 'price-desc-rank')) + '&k=' + q;
+			var ebay = 'https://www.ebay.com/sch/i.html?_sop=' + o + '&_nkw=' + q;
+			var aliexpress = 'https://m.aliexpress.com/search.htm?sortType' + (o == 12 ? 'MAIN' : (o == 15 ? 'PP_A' : 'PP_D')) + '&keywords=' + q;
+			var amazon = 'https://www.amazon.com/gp/aw/s/ref=is_s?s=' + (o == 12 ? 'relevanceblender' : (o == 15 ? 'price-asc-rank' : 'price-desc-rank')) + '&k=' + q;
 			loadURL(ebay, 0);
 			loadURL(aliexpress, 1);
 			loadURL(amazon, 2);
 		}
 	</script>
-
 </body>
-
 </html>
