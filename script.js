@@ -41,7 +41,7 @@ function getData(data, no) {
 }
 function loadHTML(html, no) {
 	var iframe = document.getElementsByTagName('iframe')[no];
-	html = html.replace(/<head>/i, '<head><base href="' + iframe.url + '"><style>.topinfo { display: none; }</style><scr' + 'ipt>document.addEventListener("click", function(e) { if(e.target && e.target.nodeName == "A" && !e.defaultPrevented) { e.preventDefault(); parent.loadURL(e.target.href, ' + no + '); } });</scr' + 'ipt>');
+	html = html.replace(/<head>/i, '<head><base href="' + iframe.url + '"><style>.topinfo { display: none; }</style><scr' + 'ipt>document.addEventListener("click", function(e) { if(e.target && e.target.nodeName == "A" && !e.defaultPrevented) { e.preventDefault(); parent.loadURL(e.target.href, ' + no + '); } }).replace(/http:\/\//g, 'https://');</scr' + 'ipt>');
 	if ('srcdoc' in iframe)
 		iframe.srcdoc = html;
 	else
